@@ -1,0 +1,155 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <soapenv:Body soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <ns1:findJobRefsResponse xmlns:ns1="http://job.opsware.com">
+         <findJobRefsReturn xsi:type="soapenc:Array" soapenc:arrayType="ns1:JobRef[21]" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+            <item href="#id0"/>
+            <item href="#id1"/>
+            <item href="#id2"/>
+            <item href="#id3"/>
+            <item href="#id4"/>
+            <item href="#id5"/>
+            <item href="#id6"/>
+            <item href="#id7"/>
+            <item href="#id8"/>
+            <item href="#id9"/>
+            <item href="#id10"/>
+            <item href="#id11"/>
+            <item href="#id12"/>
+            <item href="#id13"/>
+            <item href="#id14"/>
+            <item href="#id15"/>
+            <item href="#id16"/>
+            <item href="#id17"/>
+            <item href="#id18"/>
+            <item href="#id19"/>
+            <item href="#id20"/>
+         </findJobRefsReturn>
+      </ns1:findJobRefsResponse>
+      <multiRef id="id17" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns2:JobRef" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns2="http://job.opsware.com">
+         <id xsi:type="xsd:long">120420001</id>
+         <idAsLong xsi:type="xsd:long">120420001</idAsLong>
+         <name xsi:type="xsd:string">Automated Communications Test for core: 1</name>
+         <secureResourceTypeName xsi:type="xsd:string">job</secureResourceTypeName>
+      </multiRef>
+      <multiRef id="id4" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns3:JobRef" xmlns:ns3="http://job.opsware.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+         <id xsi:type="xsd:long">120310001</id>
+         <idAsLong xsi:type="xsd:long">120310001</idAsLong>
+         <name xsi:type="xsd:string">Automated Communications Test for core: 1</name>
+         <secureResourceTypeName xsi:type="xsd:string">job</secureResourceTypeName>
+      </multiRef>
+      <multiRef id="id18" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns4:JobRef" xmlns:ns4="http://job.opsware.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+         <id xsi:type="xsd:long">120260001</id>
+         <idAsLong xsi:type="xsd:long">120260001</idAsLong>
+         <name xsi:type="xsd:string">Automated Communications Test for core: 1</name>
+         <secureResourceTypeName xsi:type="xsd:string">job</secureResourceTypeName>
+      </multiRef>
+      <multiRef id="id1" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns5:JobRef" xmlns:ns5="http://job.opsware.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+         <id xsi:type="xsd:long">120410001</id>
+         <idAsLong xsi:type="xsd:long">120410001</idAsLong>
+         <name xsi:type="xsd:string">Automated Communications Test for core: 1</name>
+         <secureResourceTypeName xsi:type="xsd:string">job</secureResourceTypeName>
+      </multiRef>
+      <multiRef id="id9" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns6:JobRef" xmlns:ns6="http://job.opsware.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+         <id xsi:type="xsd:long">120380001</id>
+         <idAsLong xsi:type="xsd:long">120380001</idAsLong>
+         <name xsi:type="xsd:string">Automated Communications Test for core: 1</name>
+         <secureResourceTypeName xsi:type="xsd:string">job</secureResourceTypeName>
+      </multiRef>
+      <multiRef id="id12" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns7:JobRef" xmlns:ns7="http://job.opsware.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+         <id xsi:type="xsd:long">120390001</id>
+         <idAsLong xsi:type="xsd:long">120390001</idAsLong>
+         <name xsi:type="xsd:string">Automated Communications Test for core: 1</name>
+         <secureResourceTypeName xsi:type="xsd:string">job</secureResourceTypeName>
+      </multiRef>
+      <multiRef id="id13" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns8:JobRef" xmlns:ns8="http://job.opsware.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+         <id xsi:type="xsd:long">120400001</id>
+         <idAsLong xsi:type="xsd:long">120400001</idAsLong>
+         <name xsi:type="xsd:string">Automated Communications Test for core: 1</name>
+         <secureResourceTypeName xsi:type="xsd:string">job</secureResourceTypeName>
+      </multiRef>
+      <multiRef id="id7" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns9:JobRef" xmlns:ns9="http://job.opsware.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+         <id xsi:type="xsd:long">120370001</id>
+         <idAsLong xsi:type="xsd:long">120370001</idAsLong>
+         <name xsi:type="xsd:string">Automated Communications Test for core: 1</name>
+         <secureResourceTypeName xsi:type="xsd:string">job</secureResourceTypeName>
+      </multiRef>
+      <multiRef id="id0" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns10:RecurringJobRef" xmlns:ns10="http://job.opsware.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+         <id xsi:type="xsd:long">10001</id>
+         <idAsLong xsi:type="xsd:long">10001</idAsLong>
+         <name xsi:type="xsd:string">Automated Communications Test for core: 1</name>
+         <secureResourceTypeName xsi:type="xsd:string">job</secureResourceTypeName>
+      </multiRef>
+      <multiRef id="id15" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns11:JobRef" xmlns:ns11="http://job.opsware.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+         <id xsi:type="xsd:long">120280001</id>
+         <idAsLong xsi:type="xsd:long">120280001</idAsLong>
+         <name xsi:type="xsd:string">Automated Communications Test for core: 1</name>
+         <secureResourceTypeName xsi:type="xsd:string">job</secureResourceTypeName>
+      </multiRef>
+      <multiRef id="id16" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns12:JobRef" xmlns:ns12="http://job.opsware.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+         <id xsi:type="xsd:long">120360001</id>
+         <idAsLong xsi:type="xsd:long">120360001</idAsLong>
+         <name xsi:type="xsd:string">Automated Communications Test for core: 1</name>
+         <secureResourceTypeName xsi:type="xsd:string">job</secureResourceTypeName>
+      </multiRef>
+      <multiRef id="id10" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns13:JobRef" xmlns:ns13="http://job.opsware.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+         <id xsi:type="xsd:long">120290001</id>
+         <idAsLong xsi:type="xsd:long">120290001</idAsLong>
+         <name xsi:type="xsd:string">Communication Test</name>
+         <secureResourceTypeName xsi:type="xsd:string">job</secureResourceTypeName>
+      </multiRef>
+      <multiRef id="id6" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns14:JobRef" xmlns:ns14="http://job.opsware.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+         <id xsi:type="xsd:long">120300001</id>
+         <idAsLong xsi:type="xsd:long">120300001</idAsLong>
+         <name xsi:type="xsd:string">Automated Communications Test for core: 1</name>
+         <secureResourceTypeName xsi:type="xsd:string">job</secureResourceTypeName>
+      </multiRef>
+      <multiRef id="id5" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns15:JobRef" xmlns:ns15="http://job.opsware.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+         <id xsi:type="xsd:long">120320001</id>
+         <idAsLong xsi:type="xsd:long">120320001</idAsLong>
+         <name xsi:type="xsd:string">Automated Communications Test for core: 1</name>
+         <secureResourceTypeName xsi:type="xsd:string">job</secureResourceTypeName>
+      </multiRef>
+      <multiRef id="id20" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns16:JobRef" xmlns:ns16="http://job.opsware.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+         <id xsi:type="xsd:long">120430001</id>
+         <idAsLong xsi:type="xsd:long">120430001</idAsLong>
+         <name xsi:type="xsd:string">Automated Communications Test for core: 1</name>
+         <secureResourceTypeName xsi:type="xsd:string">job</secureResourceTypeName>
+      </multiRef>
+      <multiRef id="id8" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns17:ScheduledJobRef" xmlns:ns17="http://job.opsware.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+         <id xsi:type="xsd:long">120440001</id>
+         <idAsLong xsi:type="xsd:long">120440001</idAsLong>
+         <name xsi:type="xsd:string">Automated Communications Test for core: 1</name>
+         <secureResourceTypeName xsi:type="xsd:string">job</secureResourceTypeName>
+      </multiRef>
+      <multiRef id="id3" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns18:JobRef" xmlns:ns18="http://job.opsware.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+         <id xsi:type="xsd:long">120270001</id>
+         <idAsLong xsi:type="xsd:long">120270001</idAsLong>
+         <name xsi:type="xsd:string">Automated Communications Test for core: 1</name>
+         <secureResourceTypeName xsi:type="xsd:string">job</secureResourceTypeName>
+      </multiRef>
+      <multiRef id="id2" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns19:JobRef" xmlns:ns19="http://job.opsware.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+         <id xsi:type="xsd:long">120250001</id>
+         <idAsLong xsi:type="xsd:long">120250001</idAsLong>
+         <name xsi:type="xsd:string">Automated Communications Test for core: 1</name>
+         <secureResourceTypeName xsi:type="xsd:string">job</secureResourceTypeName>
+      </multiRef>
+      <multiRef id="id19" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns20:JobRef" xmlns:ns20="http://job.opsware.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+         <id xsi:type="xsd:long">120330001</id>
+         <idAsLong xsi:type="xsd:long">120330001</idAsLong>
+         <name xsi:type="xsd:string">Automated Communications Test for core: 1</name>
+         <secureResourceTypeName xsi:type="xsd:string">job</secureResourceTypeName>
+      </multiRef>
+      <multiRef id="id11" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns21:JobRef" xmlns:ns21="http://job.opsware.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+         <id xsi:type="xsd:long">120350001</id>
+         <idAsLong xsi:type="xsd:long">120350001</idAsLong>
+         <name xsi:type="xsd:string">Automated Communications Test for core: 1</name>
+         <secureResourceTypeName xsi:type="xsd:string">job</secureResourceTypeName>
+      </multiRef>
+      <multiRef id="id14" soapenc:root="0" soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns22:JobRef" xmlns:ns22="http://job.opsware.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+         <id xsi:type="xsd:long">120340001</id>
+         <idAsLong xsi:type="xsd:long">120340001</idAsLong>
+         <name xsi:type="xsd:string">Automated Communications Test for core: 1</name>
+         <secureResourceTypeName xsi:type="xsd:string">job</secureResourceTypeName>
+      </multiRef>
+   </soapenv:Body>
+</soapenv:Envelope>
