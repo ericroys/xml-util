@@ -1,0 +1,28 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <soapenv:Body soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <ns1:findServerRefsResponse xmlns:ns1="http://server.opsware.com">
+         <findServerRefsReturn xsi:type="soapenc:Array" soapenc:arrayType="ns1:ServerRef[2]" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+            <item href="#id0"/>
+            <item href="#id1"/>
+         </findServerRefsReturn>
+      </ns1:findServerRefsResponse>
+      <ns1:ChangeID xmlns:ns1="http://server.opsware.com">CHG000001</ns1:ChangeID>
+      <ns1:TestIds xmlns:ns1="http://server.opsware.com">
+         <ns1:Id xmlns:ns1="http://server.opsware.com">0</ns1:Id>
+         <ns1:Id xmlns:ns1="http://server.opsware.com">1</ns1:Id>
+         <ns1:Id xmlns:ns1="http://server.opsware.com">2</ns1:Id>
+      </ns1:TestIds>
+      <multiRef id="id1">
+         <id xsi:type="xsd:long">11280001</id>
+         <idAsLong xsi:type="xsd:long">11280001</idAsLong>
+         <name xsi:type="xsd:string">Wiki Server - RH62</name>
+         <secureResourceTypeName xsi:type="xsd:string">device</secureResourceTypeName>
+      </multiRef>
+      <multiRef id="id0" >
+         <id xsi:type="xsd:long">10001</id>
+         <idAsLong xsi:type="xsd:long">10001</idAsLong>
+         <name xsi:type="xsd:string">sacore01.seamlessti.com</name>
+         <secureResourceTypeName xsi:type="xsd:string">device</secureResourceTypeName>
+      </multiRef>
+   </soapenv:Body>
+</soapenv:Envelope>

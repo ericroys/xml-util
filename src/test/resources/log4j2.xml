@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Configuration status="ERROR" monitorInterval="5">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <JsonLayout properties="true" includeStacktrace="true" charset="UTF-8" locationInfo="true" compact="true" eventEol="true" complete="false">
+				<KeyValuePair key="timestamp" value="$${date:yyyy-MM-dd'T'HH:mm:ss.SSSZ}" />
+            </JsonLayout>
+        </Console>
+    </Appenders>
+	<Loggers>
+		<Logger name="com.edrpub" level="TRACE" additivity="false">
+			<AppenderRef ref="Console"/>
+		</Logger>
+		<Root level="TRACE">
+			<AppenderRef ref="Console" />
+		</Root>
+    </Loggers>
+</Configuration>
