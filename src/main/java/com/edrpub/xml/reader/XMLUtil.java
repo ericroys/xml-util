@@ -42,16 +42,32 @@ public class XMLUtil {
 	private final Document doc;
 	private final String fileName;
 
+	/**
+	 * Instantiate XMLUtil using a path to an xml document
+	 * 
+	 * @param url full path to an xml file
+	 * @throws XMLParserException if the input is invalid, there is an error opening
+	 *                            the file, or
+	 *                            there is something wrong with the xml document
+	 *                            that doesn't allow it to be parsed.
+	 */
 	public XMLUtil(final String url) throws XMLParserException {
 		validateRequired(url, FILE_REQ);
 		this.doc = getDocument(url);
 		this.fileName = url;
 	}
 
-	public XMLUtil(final Document doc) throws XMLParserException {
-		if (doc == null)
+	/**
+	 * Instantiate XMLUtil using an existing DOM
+	 * Handy of things like parsing DOM from a SOAP message.
+	 * 
+	 * @param document Document object
+	 * @throws XMLParserException if the input is invalid
+	 */
+	public XMLUtil(final Document document) throws XMLParserException {
+		if (document == null)
 			throw new XMLParserException("A document is required!");
-		this.doc = doc;
+		this.doc = document;
 		this.fileName = null;
 	}
 
@@ -107,7 +123,9 @@ public class XMLUtil {
 	 * parameter.
 	 * 
 	 * @param qual String representation of an xpath query statement
-	 * @throws XMLParserException
+	 * @return List&lt;String&gt; of values matchin the xpath
+	 * @throws XMLParserException when the xpath is invalid or there is an error
+	 *                            processing the search
 	 */
 	public List<String> getListParametersByXpath(final String qual) throws XMLParserException {
 		final List<String> s = new ArrayList<String>();
@@ -127,7 +145,9 @@ public class XMLUtil {
 	 * 
 	 * @param qual    String representation of an xpath query statement
 	 * @param context Namespace context to include in the search
-	 * @throws XMLParserException
+	 * @return List&lt;String&gt; of parameters matching the xpath
+	 * @throws XMLParserException when the inputs are invalid or there is an error
+	 *                            processing the search
 	 */
 	public List<String> getListParametersByXpathNS(final String qual, final NamespaceContext context)
 			throws XMLParserException {
@@ -148,7 +168,9 @@ public class XMLUtil {
 	 * parameter.
 	 * 
 	 * @param qual String representation of an xpath query statement
-	 * @throws XMLParserException
+	 * @return org.w3c.dom.NodeList
+	 * @throws XMLParserException when the input is invalid or there is an error
+	 *                            processing the search
 	 */
 	public NodeList getNodeListByXpath(final String qual) throws XMLParserException {
 		return getNodes(qual);
@@ -159,7 +181,9 @@ public class XMLUtil {
 	 * parameter
 	 * 
 	 * @param qual an xpath query string
-	 * @throws XMLParserException
+	 * @return a String value of the element found with xpath
+	 * @throws XMLParserException when the input is invalid or there is an error
+	 *                            processing the search
 	 */
 	public String getParameterByXpath(final String qual) throws XMLParserException {
 		final Node n = getNode(qual);
@@ -173,7 +197,8 @@ public class XMLUtil {
 	 * @param qual    an xpath qualification string
 	 * @param context a NamespaceContext
 	 * @return string of found value or null
-	 * @throws XMLParserException
+	 * @throws XMLParserException when the input is invalid or there is an error
+	 *                            processing the search
 	 */
 	public String getParameterByXpathNS(final String qual, final NamespaceContext context) throws XMLParserException {
 		final Node n = getNodeNS(qual, context);
@@ -182,13 +207,13 @@ public class XMLUtil {
 
 	/**
 	 * Returns a NodeList for matching items based on the the inputs of xpath
-	 * statement
-	 * and a NamespaceContext
+	 * statement and a NamespaceContext
 	 * 
-	 * @param xpath
-	 * @param context
-	 * @return
-	 * @throws XMLParserException
+	 * @param xpath   an xpath statement
+	 * @param context a NamespaceContext
+	 * @return NodeList
+	 * @throws XMLParserException when the input is invalid or there is an error
+	 *                            processing the search
 	 */
 	public NodeList getNodeListByXpathNS(final String xpath, final NamespaceContext context) throws XMLParserException {
 		return getNodesNS(xpath, context);
@@ -198,13 +223,14 @@ public class XMLUtil {
 	 * Get a Nodelist of results of a Namespace backed xpath query of the item
 	 * object
 	 * 
-	 * @param qual
-	 * @param item
-	 * @param context
-	 * @return
-	 * @throws XMLParserException
+	 * @param qual    an xpath query string
+	 * @param item    org.w3c.dom.Node in which to search with xpath
+	 * @param context a NamespaceContext that is valid for the document
+	 * @return org.w3c.dom.NodeList
+	 * @throws XMLParserException when inputs are invalid or there is an error
+	 *                            processing the search
 	 */
-	public NodeList getNodeListFromNodeByXpathNS(final String qual, final Object item, final NamespaceContext context)
+	public NodeList getNodeListFromNodeByXpathNS(final String qual, final Node item, final NamespaceContext context)
 			throws XMLParserException {
 		try {
 			return (NodeList) getExpression(qual, context).evaluate(item, XPathConstants.NODESET);
@@ -228,7 +254,9 @@ public class XMLUtil {
 	 * 
 	 * @param qual  String representation of an xpath query statement
 	 * @param fName The document path/name to search
-	 * @throws XMLParserException
+	 * @return List&lt;String&gt; of values found for the xpath statement
+	 * @throws XMLParserException when inputs are invalid or there is an error
+	 *                            processing the search
 	 */
 	public static List<String> getListParametersByXpath(final String qual, final String fName)
 			throws XMLParserException {
@@ -259,7 +287,9 @@ public class XMLUtil {
 	 * 
 	 * @param qual  String representation of an xpath query statement
 	 * @param fName The document path/name to search
-	 * @throws XMLParserException
+	 * @return org.w3c.dom.NodeList
+	 * @throws XMLParserException when inputs are invalid or there is an error
+	 *                            processing the search
 	 */
 	public static NodeList getNodeListByXpath(final String qual, final String fName) throws XMLParserException {
 		try {
@@ -274,8 +304,9 @@ public class XMLUtil {
 	 * 
 	 * @param qual an xpath query string
 	 * @param item an xml object
-	 * @return
-	 * @throws XMLParserException
+	 * @return org.w3c.dom.NodeList
+	 * @throws XMLParserException when inputs are invalid or there is an error
+	 *                            processing the search
 	 */
 	public static NodeList getNodeListFromNodeByXpath(final String qual, final Node item)
 			throws XMLParserException {
@@ -294,8 +325,9 @@ public class XMLUtil {
 	 * 
 	 * @param qual  an xpath statement
 	 * @param fName a file name
-	 * @return
-	 * @throws XMLParserException
+	 * @return String
+	 * @throws XMLParserException when inputs are invalid or there is an error
+	 *                            processing the search
 	 */
 	public static String getParameterByXpath(final String qual, final String fName) throws XMLParserException {
 		try {
@@ -321,7 +353,8 @@ public class XMLUtil {
 	 * @param tag   the tag of the xml element node to return.
 	 * @param fName the file to parse
 	 * @return the node value of a single element returned as a String.
-	 * @throws XMLParserException
+	 * @throws XMLParserException when inputs are invalid or there is an error
+	 *                            processing the search
 	 */
 	public static String getParameterByTag(final String tag, final String fName) throws XMLParserException {
 		final NodeList nl = getDocument(fName).getElementsByTagName(tag);
@@ -336,9 +369,10 @@ public class XMLUtil {
 	 * 
 	 * @param tag   the tag of the xml element node(s) to return.
 	 * @param fName the file to parse
-	 * @return node list - elements of the node returned given the tag input or
+	 * @return org.w3c.dom.NodeList - elements of the node returned given the tag input or
 	 *         null.
-	 * @throws XMLParserException
+	 * @throws XMLParserException when inputs are invalid or there is an error
+	 *                            processing the search
 	 */
 	public static NodeList getNodeListByTag(final String tag, final String fName) throws XMLParserException {
 		NodeList nl = getDocument(fName).getElementsByTagName(tag);
@@ -354,8 +388,9 @@ public class XMLUtil {
 	 * 
 	 * @param tag   the tag of the xml element node(s) to return.
 	 * @param fName the file to parse
-	 * @return List<String> - list of strings the node returned given the tag input.
-	 * @throws XMLParserException
+	 * @return List&lt;String&gt;
+	 * @throws XMLParserException when inputs are invalid or there is an error
+	 *                            processing the search
 	 */
 	public static List<String> getListParametersByTag(final String tag, final String fName)
 			throws XMLParserException {
@@ -381,9 +416,9 @@ public class XMLUtil {
 	 * 
 	 * @param tag       the tag of the xml element node(s) to return.
 	 * @param namespace the namespace of the tag tag
-	 * @return List<String> - list of strings the node returned given the tag input
-	 *         and namespace.
-	 * @throws XMLParserException
+	 * @return List&lt;String&gt;
+	 * @throws XMLParserException when inputs are invalid or there is an error
+	 *                            processing the search
 	 */
 	public List<String> getparametersByTagNS(final String tag, final String namespace) throws XMLParserException {
 		validateRequired(tag, TAG_REQ);
@@ -435,7 +470,8 @@ public class XMLUtil {
 	 * @param tag   the tag of the xml element node(s) to return.
 	 * @param fName the file to parse
 	 * @return map - elements of the node name/value returned given the tag input.
-	 * @throws XMLParserException
+	 * @throws XMLParserException when inputs are invalid or there is an error
+	 *                            processing the search
 	 */
 	public static Map<String, List<String>> getMapByTag(final String tag, final String fName)
 			throws XMLParserException {
@@ -472,7 +508,8 @@ public class XMLUtil {
 	 * @param qual  the tag of the xml element node(s) to return.
 	 * @param fName the file to parse
 	 * @return map - elements of the node name/value returned given the tag input.
-	 * @throws XMLParserException
+	 * @throws XMLParserException when inputs are invalid or there is an error
+	 *                            processing the search
 	 */
 	public static Map<String, List<String>> getMapByXpath(final String qual, final String fName)
 			throws XMLParserException {
@@ -514,7 +551,7 @@ public class XMLUtil {
 	 * 
 	 * @param fileName get a Document object from a filename
 	 * @return DOM (Document Object Model) of the xml file
-	 * @throws XMLParserException
+	 * @throws XMLParserException when there is a problem parsing the file into DOM
 	 */
 	private static Document getDocument(final String fileName) throws XMLParserException {
 		validateRequired(fileName, FILE_REQ);
@@ -542,11 +579,12 @@ public class XMLUtil {
 	 * Updates an existing node with a new value in the file
 	 * or adds it if not already present
 	 * 
-	 * @param String nodeName - the name of the node to modify
-	 * @param String value - the value to set for the node value
-	 * @throws XMLParserException
+	 * @param xpath the name of the node to modify
+	 * @param value the value to set for the node value
+	 * @throws XMLParserException when inputs are invalid or there is an error
+	 *                            processing the add/update
 	 */
-	public void updateOrAddElement(final String xpath, final String value) throws RuntimeException, XMLParserException {
+	public void updateOrAddElement(final String xpath, final String value) throws XMLParserException {
 		validateRequired(xpath, XPATH_REQ);
 		final Node n = getNode(xpath);
 		if (n != null) {
@@ -562,9 +600,16 @@ public class XMLUtil {
 		}
 	}
 
+	/**
+	 * Remove a node from the existing document
+	 * 
+	 * @param xpath an xpath statement to identify the node to remove
+	 * @throws XMLParserException when inputs are invalid or there is an error
+	 *                            processing the deletion
+	 */
 	public void removeNode(final String xpath) throws XMLParserException {
 		final Node n = getNode(xpath);
-		if(n != null){
+		if (n != null) {
 			Node parent = n.getParentNode();
 			parent.removeChild(n);
 			updateDocument();
@@ -577,8 +622,9 @@ public class XMLUtil {
 	 * @param xpath the xpath for the parent node where node to be added
 	 * @param name  the name of the new node
 	 * @param value the value to add (not required)
-	 * @return
-	 * @throws XMLParserException
+	 * @return Node
+	 * @throws XMLParserException when inputs are invalid or there is an error
+	 *                            processing the request
 	 */
 	private Node addElement(final String xpath, final String name, final String value) throws XMLParserException {
 		validateRequired(xpath, XPATH_REQ);
@@ -598,7 +644,7 @@ public class XMLUtil {
 	 * Updates the xml configuration file DOM with an updated DOM.
 	 * 
 	 * @param Document doc
-	 * @return none
+	 * @return void
 	 * @throws XMLParserException
 	 */
 	private void updateDocument() throws XMLParserException {

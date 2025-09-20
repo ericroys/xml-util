@@ -14,28 +14,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
-import org.junit.jupiter.api.TestInstance.Lifecycle;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 
 import com.edr.test.TestNamespace;
 
-@TestInstance(value = Lifecycle.PER_CLASS)
-public class XMLUtilTest {
-    private static final String BASE_PATH = "src/test/resources/data/";
-    private static final String FILENONS = BASE_PATH + "nonamespace.xml";
-    private static final String FILEBOOKS = BASE_PATH + "books.xml";
-    private static final String FILENS = BASE_PATH + "namespace.xml";
-    protected TestNamespace ns;
-
-    @BeforeAll
-
-    void setUpBeforeClass() throws Exception {
-        ns = new TestNamespace();
-    }
+public class XMLUtilTest extends XMLTest{
 
     @Test
     void testUpdateOrAddElement() throws XMLParserException {
@@ -171,7 +156,7 @@ public class XMLUtilTest {
 
     @Test
     void testGetNodeListByXpathNS() throws XMLParserException {
-        XMLUtil util = new XMLUtil(BASE_PATH + "findJobRefsResponse.xml");
+        XMLUtil util = new XMLUtil(FILE_JOBREF);
         assertThrows(XMLParserException.class, () -> {
             util.getNodeListByXpathNS("//findJobRefsReturn/item/@href", null);
         });
@@ -187,7 +172,7 @@ public class XMLUtilTest {
 
     @Test
     void testGetNodeListFromNodeByXpathNS() throws XMLParserException {
-        XMLUtil util = new XMLUtil(BASE_PATH + "findJobRefsResponse.xml");
+        XMLUtil util = new XMLUtil(FILE_JOBREF);
         NodeList nl = util.getNodeListByXpathNS("//multiRef[@id=\"id17\"]", ns);
         assertAll(
                 "Setup for testGetNodeListFromNodeByXpathNS",

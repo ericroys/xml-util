@@ -3,7 +3,7 @@
   <groupId>com.edrpub</groupId>
   <artifactId>xml-util</artifactId>
   <packaging>jar</packaging>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   <name>XML Utility</name>
   <description>A utility for parsing xml documents</description>
   	<properties>
@@ -12,9 +12,7 @@
 		<maven-jaxb2-plugin.version>0.13.2</maven-jaxb2-plugin.version>
     <slf4j-version>2.0.12</slf4j-version>
     <log4j-version>2.23.1</log4j-version>
-		<!-- un commento not run tests
-		<maven.test.skip>true</maven.test.skip> 
-		-->
+    <api.dir>docs</api.dir>
 	</properties>
   <dependencies>
     <dependency>
@@ -78,4 +76,20 @@
       <scope>test</scope> 
   </dependency>
 </dependencies>
+<build>
+  <plugins>
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>3.6.2</version>
+          <configuration>
+              <source>11</source>
+              <target>11</target>
+              <reportOutputDirectory>
+                ${api.dir}
+              </reportOutputDirectory>
+          </configuration>
+      </plugin>
+  </plugins>
+</build>
 </project>
