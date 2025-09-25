@@ -7,15 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
-
 import org.junit.jupiter.api.Test;
 
 public class XMLReadUtilTest extends XMLTest {
@@ -104,7 +97,7 @@ public class XMLReadUtilTest extends XMLTest {
     @Test
     void testIsEmpty() throws XMLParserException {
         final XMLReadUtil reader = new XMLReadUtil(FILENONS);
-        assertTrue(reader.isEmpty("astring"));
-        assertFalse(reader.isEmpty(null));
+        assertFalse(reader.isEmpty("astring"));
+        assertTrue(reader.isEmpty(null));
     }
 }
